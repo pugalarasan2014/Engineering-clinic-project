@@ -1,20 +1,15 @@
 
 import numpy as np
+
 import pandas as pd
+
 import matplotlib.pyplot as plt
 
-"""### Load Dataset from Local Directory"""
-
-# from google.colab import files
-# uploaded = files.upload()
-
-"""### Importing the dataset"""
 
 dataset = pd.read_csv('dataset.csv')
 print(dataset.shape)
 print(dataset.head(5))
 
-"""### Upper Confidence Bound"""
 
 import math
 observations = 10000
@@ -46,10 +41,4 @@ print("Rewards by Ads = ",sums_of_rewards_of_each_ads)
 print("Total Rewards by UCB = ",total_reward)
 print("Ads selected at each round:",ads_selected)
 
-"""### Visualizing Result"""
 
-plt.hist(ads_selected)
-plt.title('Histogram of ads selections')
-plt.xlabel('Ads')
-plt.ylabel('Number of times each ad was selected')
-plt.show()
